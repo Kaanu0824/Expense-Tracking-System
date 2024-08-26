@@ -1,38 +1,38 @@
-/* src/components/ExpenseForm.css */
-form {
+.box{
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  align-items: center ;
+  justify-content: center;
 }
 
-label {
+
+.amount , .cat, .date , .des {
+  font-size: medium;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0.5rem;
+  padding:  0.5rem 1rem;
+  color: white ;
+  border: none ;
+  border-radius: 0.5rem;
+  background: #5d6669;
+}
+
+.title {
   margin-bottom: 10px;
   width: 100%;
   font-size: 16px;
+  color: black;
 }
 
-input, select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-top: 5px;
-  box-sizing: border-box;
-}
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
+.submit{
+  background:#FFD700;
   border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  width: 100%;
-}
-
-button:hover {
-  background-color: #0056b3;
+  padding: 0.75rem 3rem;
+  border-radius: 1rem;
+  margin: 2rem;
 }

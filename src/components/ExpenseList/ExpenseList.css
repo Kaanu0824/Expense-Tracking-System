@@ -1,9 +1,43 @@
-/* src/components/ExpenseList.css */
-.expense-list {
+.list {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
+  align-items: center ;
+  justify-content: center;
+}
+
+.ExpensesList{
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: medium;
+ 
+}
+
+.cate{
+  display: flex;
+  text-align: left;
+  width: 900px;
+}
+
+.btnedit{
+    background:green;
+    border: none;
+    padding: 0.75rem 3rem;
+    border-radius: 1rem;
+}
+
+.btndelete{
+  background:red;
+  border: none;
+  padding: 0.75rem 3rem;
+  border-radius: 1rem;
 }
 
 ul {
@@ -29,15 +63,6 @@ li span {
   margin-right: 10px;
 }
 
-li button {
-  background-color: #dc3545;
-  padding: 5px 10px;
-}
-
-li button:hover {
-  background-color: #c82333;
-}
-
 .graph-container {
   margin-top: 20px;
   width: 100%;
@@ -47,3 +72,31 @@ li button:hover {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+h2{
+  color: white;
+}
+
+h1{
+  color: wheat;
+}
+
+.graph-container{
+  /* background: linear-gradient(90deg,  rgb(164, 159, 159) 10% , rgb(115, 151, 202) 100%); */
+  background: none;
+  overflow: hidden;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: medium;
+  width: 900px;
+}
+
+
+.graph-container .h2 {
+  color: white;
+}
+
+

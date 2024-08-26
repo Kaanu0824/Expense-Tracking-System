@@ -1,18 +1,16 @@
-
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { deleteExpense } from '../../store/expenseSlice';
 import './ExpenseList.css';
 
-// Colors for the chart
+
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
 const ExpenseList = ({ onEdit }) => {
   const expenses = useSelector((state) => state.expenses);
   const dispatch = useDispatch();
 
-  // Prepare data for the graph
   const data = [
     { category: 'Food', amount: 0 },
     { category: 'Study', amount: 0 },
@@ -29,21 +27,25 @@ const ExpenseList = ({ onEdit }) => {
   });
 
   return (
-    <div className="expense-list">
-      <h2>Expenses</h2>
-      <ul>
-        {expenses.map((expense) => (
-          <li key={expense.id}>
-            <span>{expense.date}</span> - <span>{expense.category}</span> - <span>${expense.amount}</span> - <span>{expense.description}</span>
-            <button onClick={() => onEdit(expense)}>Edit</button>
-            <button onClick={() => dispatch(deleteExpense(expense.id))}>Delete</button>
-          </li>
-        ))}
-      </ul>
+    <div className="list">
 
-      <h2>Expense Distribution</h2>
+      <div className='ExpensesList'>
+        <h1> Expenses</h1>
+        <ul className='expancecard'>
+          {expenses.map((expense) => (
+            <li key={expense.id}>
+              <span className='cate'> {expense.date} - {expense.category} -  ${expense.amount} -  {expense.description}</span>
+              <button className='btnedit' onClick={() => onEdit(expense)}>Edit</button>
+              <button className='btndelete' onClick={() => dispatch(deleteExpense(expense.id))}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      
       <div className="graph-container">
-        <ResponsiveContainer width="100%" height={300}>
+      <h2>Expense Distribution</h2>
+        <ResponsiveContainer width="100%" height={400}>
           <PieChart>
             <Pie
               data={data}
@@ -61,10 +63,11 @@ const ExpenseList = ({ onEdit }) => {
               ))}
             </Pie>
             <Tooltip />
-            <Legend verticalAlign="top" height={36} />
+            <Legend verticalAlign="top" height={25} />
           </PieChart>
         </ResponsiveContainer>
       </div>
+
     </div>
   );
 };

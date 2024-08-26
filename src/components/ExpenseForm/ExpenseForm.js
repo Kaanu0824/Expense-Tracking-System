@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { addExpense, updateExpense } from '../store/expenseSlice';
 import { addExpense, updateExpense } from '../../store/expenseSlice';
 import './ExpenseForm.css';
 
@@ -42,45 +41,48 @@ const ExpenseForm = ({ currentExpense, setCurrentExpense }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Amount:
+    <div className='box'>
+    <form onSubmit={handleSubmit} className='contactForm' > 
+
         <input
           type="number"
+          className='amount'
+          placeholder='Amount'
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Category:
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+     
+        <select className='cat' value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="Food">Food</option>
           <option value="Study">Study</option>
           <option value="Travel">Travel</option>
           <option value="Dress">Dress</option>
           <option value="Other">Other</option>
         </select>
-      </label>
-      <label>
-        Date:
+      
+       
         <input
           type="date"
+          className='date'
+          placeholder='Select Date'
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Description:
+     
         <input
           type="text"
+          className='des'
+          placeholder='Description'
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-      </label>
-      <button type="submit">Save Expense</button>
+      
+      <button className='submit' type="submit">Save Expense</button>
+      
     </form>
+    </div>
   );
 };
 
