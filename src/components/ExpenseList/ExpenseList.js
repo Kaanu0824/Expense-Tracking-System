@@ -31,15 +31,13 @@ const ExpenseList = ({ onEdit }) => {
 
       <div className='ExpensesList'>
         <h1> Expenses</h1>
-        <ul className='expancecard'>
           {expenses.map((expense) => (
-            <li key={expense.id}>
+            <li  key={expense.id}>
               <span className='cate'> {expense.date} - {expense.category} -  ${expense.amount} -  {expense.description}</span>
               <button className='btnedit' onClick={() => onEdit(expense)}>Edit</button>
               <button className='btndelete' onClick={() => dispatch(deleteExpense(expense.id))}>Delete</button>
             </li>
           ))}
-        </ul>
       </div>
 
       
