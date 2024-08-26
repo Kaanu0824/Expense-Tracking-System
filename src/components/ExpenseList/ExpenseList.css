@@ -59,7 +59,6 @@ li {
   max-width: 20rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* background: none; */
   background: white;
   flex-direction: column;
   width: 900px;
