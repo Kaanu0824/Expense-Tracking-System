@@ -1,30 +1,21 @@
 import React, { useState } from 'react';
-import { Provider } from 'react-redux';
-import './App.css'; // Import CSS
-import ExpenseForm from './components/ExpenseForm';
-import ExpenseList from './components/ExpenseList';
-import { store } from './redux/store';
+import './App.css';
+import ExpenseForm from './components/ExpenseForm/ExpenseForm';
+import ExpenseList from './components/ExpenseList/ExpenseList';
 
-const App = () => {
-    const [currentExpense, setCurrentExpense] = useState(null);
+function App() {
+  const [currentExpense, setCurrentExpense] = useState(null);
 
-    const handleEdit = (expense) => {
-        setCurrentExpense(expense);
-    };
-
-    const handleCloseForm = () => {
-        setCurrentExpense(null);
-    };
-
-    return (
-        <Provider store={store}>
-            <div className="container">
-                <h1>Expense Management System</h1>
-                <ExpenseForm currentExpense={currentExpense} onClose={handleCloseForm} />
-                <ExpenseList onEdit={handleEdit} />
-            </div>
-        </Provider>
-    );
-};
+  const handleEdit = (expense) => {
+    setCurrentExpense(expense);
+  };
+  return (
+    <div className="App">
+      <h1>Expense Management</h1>
+      <ExpenseForm currentExpense={currentExpense} setCurrentExpense={setCurrentExpense} />
+      <ExpenseList onEdit={handleEdit} />
+    </div>
+  );
+}
 
 export default App;
